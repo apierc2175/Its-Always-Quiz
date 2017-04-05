@@ -31,18 +31,25 @@ function check()
     var guess4 = document.getElementById('four').value;
     var guess5 = document.getElementById('five').value;
 
+    var my_score = 0;
+
 
 
     if (answer1 == guess1) {
         document.getElementById('one').style.backgroundColor = "#88FF88";
+        my_score = my_score + 1;
+
     }
     else
     {
         document.getElementById('one').style.backgroundColor = "#FF0000";
+
     }
 
     if (answer2 == guess2) {
         document.getElementById('two').style.backgroundColor = "#88FF88";
+        my_score = my_score + 1;
+
     }
     else
     {
@@ -51,6 +58,8 @@ function check()
 
     if (answer3 == guess3) {
         document.getElementById('three').style.backgroundColor = "#88FF88";
+        my_score = my_score + 1;
+
     }
     else
     {
@@ -59,6 +68,8 @@ function check()
 
     if (answer4 == guess4) {
         document.getElementById('four').style.backgroundColor = "#88FF88";
+        my_score = my_score + 1;
+
     }
     else
     {
@@ -67,12 +78,38 @@ function check()
 
     if (answer5 == guess5) {
         document.getElementById('five').style.backgroundColor = "#88FF88";
+        my_score = my_score + 1;
+
     }
     else
     {
         document.getElementById('five').style.backgroundColor = "#FF0000";
     }
-}
+
+      if (my_score == 5) {
+        message = "Your the newest member of the gang!"
+      }
+      else if (my_score == 4) {
+        message = "Almost there! Just missed one"
+      }
+        else if (my_score == 3) {
+          message = "Not bad, 3 out of 5"
+        }
+        else if (my_score == 2) {
+          message = "You remind me of Frank, You suffer from memory loss"
+        }
+        else if (my_score == 1) {
+          message = "1 out of 5, beware of thin mints"
+        }
+        else {
+          message= "You missed every question, you might as well live with Rickety Cricket"
+        }
+        document.getElementById('result').innerHTML = message;
+      }
+
+
+
+
 </script>
 </head>
 
@@ -92,6 +129,6 @@ function check()
 <input type="button" onclick="check()" value="Check it!">
 
 </form>
-
+<p id="result"></p>
 </body>
 </html>
